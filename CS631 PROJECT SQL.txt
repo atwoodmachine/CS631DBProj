@@ -1,0 +1,107 @@
+DROP TABLE IF EXISTS Customer,Credit_Card, Transaction, Ship_Address, Basket, Appears_In, Product, Computer, Laptop, Printer;
+
+CREATE TABLE Customer (
+    CID int NOT NULL,
+    FName varchar(255) NOT NULL,
+    LName varchar(255) NOT NULL,
+    Status varchar(255) NOT NULL,
+    Email varchar(255) UNIQUE,
+    Address varchar(255),
+    Phone int UNIQUE,
+    CreditLine int,
+    PRIMARY KEY (CID)
+);
+
+CREATE TABLE Credit_Card (
+    CID int NOT NULL,
+    CardNumber int NOT NULL,
+    SecNumber int NOT NULL,
+    CardOwnerName varchar(255) NOT NULL,
+    CardType varchar(255),
+    BillingAddress varchar(255),
+    ExpDate varchar(255) NOT NULL,
+    isStored BOOL,
+    PRIMARY Key (CardNumber),
+    FOREIGN KEY (CID) REFERENCES Customer(CID)
+);
+
+CREATE TABLE Basket (
+    CID int NOT NULL,
+    CartID int NOT NULL,
+    PRIMARY KEY (CartID),
+    FOREIGN KEY (CID) REFERENCES Customer(CID)
+);
+
+CREATE TABLE Ship_Address (
+    CID int NOT NULL,
+    SAName varchar(255) NOT NULL,
+    RecipientName varchar(255) NOT NULL,
+    Country varchar(255) NOT NULL,
+    State varchar(255) NOT NULL,
+    City varchar(255) NOT NULL,
+    Zip int NOT NULL,
+    Street varchar(255) NOT NULL,
+    SNumber int,
+    PRIMARY KEY (CID,SAName),
+    FOREIGN KEY (CID) REFERENCES Customer(CID)
+);
+
+CREATE TABLE Transaction (
+    CID int NOT NULL,
+    SAName varchar(255) NOT NULL,
+    CardNumber int NOT NULL,
+    CartID int NOT NULL,
+    TDATE DATE,
+    TotalAmount int,
+    TranTag int,
+    PRIMARY KEY (CartID),
+    FOREIGN KEY (CartID) REFERENCES Basket(CartID),
+    FOREIGN KEY (CID,SANAME) REFERENCES Ship_Address(CID,SAName)
+);
+
+
+CREATE TABLE Product (
+    ProductID int NOT NULL,
+    PName varchar(255) NOT NULL,
+    PPrice int NOT NULL,
+    PType varCHar(255) NOT NULL,
+    PQuantity int NOT NULL,
+    PDescription varchar(255) NOT NULL,
+    OnOffer bool NOT NULL,
+    OfferPrice int,
+    PRIMARY KEY (ProductID)
+);
+
+CREATE TABLE Appears_In (
+    ProductID int NOT NULL,
+    CartID int NOT NULL,
+    Quantity int,
+    PriceSold int,
+    PRIMARY KEY (CartID,ProductID),
+    FOREIGN KEY (CartID) REFERENCES Basket(CartID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
+
+CREATE TABLE Computer (
+    ProductID int NOT NULL,
+    CPUType varchar(255) NOT NULL,
+    PRIMARY KEY (ProductID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
+
+CREATE TABLE Laptop (
+    ProductID int NOT NULL,
+    CPUType varchar(255) NOT NULL,
+    Weight int NOT NULL,
+    BatteryType varchar(255) NOT NULL,
+    PRIMARY KEY (ProductID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
+
+CREATE TABLE Printer (
+    ProductID int NOT NULL,
+    Resolution varchar(255) NOT NULL,
+    PrinterType varchar(255) NOT NULL,
+    PRIMARY KEY (ProductID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
