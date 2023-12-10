@@ -1,14 +1,14 @@
-DROP TABLE IF EXISTS Customer,Credit_Card, Transaction, Ship_Address, Basket, Appears_In, Product, Computer, Laptop, Printer;
+DROP TABLE IF EXISTS Transaction, Ship_Address, Basket, Appears_In, Computer, Laptop, Printer, Customer, Product, Credit_Card;
 
 CREATE TABLE Customer (
-    CID int NOT NULL,
+    CID int NOT NULL AUTO_INCREMENT,
     FName varchar(255) NOT NULL,
     LName varchar(255) NOT NULL,
-    Status varchar(255) NOT NULL,
+    Status varchar(255) NOT NULL DEFAULT 'regular',
     Email varchar(255) UNIQUE,
     Address varchar(255),
     Phone bigint UNIQUE,
-    CreditLine int,
+    CreditLine int DEFAULT '0',
     PRIMARY KEY (CID)
 );
 
