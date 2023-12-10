@@ -1,0 +1,94 @@
+INSERT INTO Customer (CID, FName, LName, Status, Email, Address, Phone, CreditLine)
+VALUES 
+(1, 'John', 'Doe', 'Active', 'john.doe@email.com', '123 Main St, Cityville', 5551234567, 1000),
+(2, 'Jane', 'Smith', 'Active', 'jane.smith@email.com', '456 Oak St, Townsville', 5559876543, 1500),
+(3, 'Alice', 'Johnson', 'Active', 'alice.johnson@email.com', '789 Maple St, Villagetown', 5552345678, 1200),
+(4, 'Bob', 'Miller', 'Active', 'bob.miller@email.com', '101 Pine St, Hamletsville', 5553456789, 800),
+(5, 'Eva', 'Anderson', 'Active', 'eva.anderson@email.com', '555 Elm St, Suburbia', 5554567890, 2000),
+(6, 'Charlie', 'Clark', 'Active', 'charlie.clark@email.com', '789 Oak St, Countryside', 5555678901, 1500),
+(7, 'Grace', 'Davis', 'Active', 'grace.davis@email.com', '123 Cedar St, Outskirts', 5556789012, 1800),
+(8, 'David', 'Evans', 'Active', 'david.evans@email.com', '456 Birch St, Farmland', 5557890123, 1200);
+
+INSERT INTO Credit_Card (CID, CardNumber, SecNumber, CardOwnerName, CardType, BillingAddress, ExpDate, isStored)
+VALUES 
+(1, 1234567890123456, 123, 'John Doe', 'Visa', '123 Main St, Cityville', '12/25', true),
+(2, 9876543210987654, 456, 'Jane Smith', 'MasterCard', '456 Oak St, Townsville', '09/24', false),
+(3, 2345678901234567, 789, 'Alice Johnson', 'Discover', '789 Maple St, Villagetown', '06/23', true),
+(4, 3456789012345678, 890, 'Bob Miller', 'Visa', '101 Pine St, Hamletsville', '04/25', false),
+(5, 4567890123456789, 901, 'Eva Anderson', 'MasterCard', '555 Elm St, Suburbia', '08/24', true),
+(6, 5678901234567890, 012, 'Charlie Clark', 'Visa', '789 Oak St, Countryside', '05/23', false),
+(7, 6789012345678901, 123, 'Grace Davis', 'American Express', '123 Cedar St, Outskirts', '10/25', true),
+(8, 7890123456789012, 234, 'David Evans', 'Discover', '456 Birch St, Farmland', '02/23', false);
+
+INSERT INTO Basket (CID, CartID)
+VALUES 
+(1, 101),
+(2, 102),
+(3, 103),
+(4, 104),
+(5, 105),
+(6, 106),
+(7, 107),
+(8, 108);
+
+INSERT INTO Ship_Address (CID, SAName, RecipientName, Country, State, City, Zip, Street, SNumber)
+VALUES 
+(1, 'Home', 'John Doe', 'USA', 'CA', 'Cityville', 12345, '123 Main St', 456),
+(2, 'Office', 'Jane Smith', 'USA', 'NY', 'Townsville', 54321, '456 Oak St', NULL),
+(3, 'Home', 'Alice Johnson', 'USA', 'TX', 'Villagetown', 67890, '789 Maple St', NULL),
+(4, 'Work', 'Bob Miller', 'USA', 'IL', 'Hamletsville', 98765, '101 Pine St', 789),
+(5, 'Home', 'Eva Anderson', 'USA', 'CA', 'Suburbia', 34567, '555 Elm St', NULL),
+(6, 'Office', 'Charlie Clark', 'USA', 'NY', 'Countryside', 45678, '789 Oak St', 234),
+(7, 'Home', 'Grace Davis', 'USA', 'TX', 'Outskirts', 56789, '123 Cedar St', NULL),
+(8, 'Work', 'David Evans', 'USA', 'IL', 'Farmland', 67890, '456 Birch St', 789);
+
+INSERT INTO Transaction (CID, SAName, CardNumber, CartID, TDATE, TotalAmount, TranTag)
+VALUES 
+(1, 'Home', 1234567890123456, 101, '2023-12-07', 500, true),
+(2, 'Office', 9876543210987654, 102, '2023-12-07', 750, true),
+(3, 'Home', 2345678901234567, 103, '2023-12-08', 300, true),
+(4, 'Work', 3456789012345678, 104, '2023-12-08', 400, true),
+(5, 'Home', 4567890123456789, 105, '2023-12-09', 600, false),
+(6, 'Office', 5678901234567890, 106, '2023-12-09', 750, false),
+(7, 'Home', 6789012345678901, 107, '2023-12-09', 900, false),
+(8, 'Work', 7890123456789012, 108, '2023-12-09', 450, false);
+
+INSERT INTO Product (ProductID, PName, PPrice, PType, PQuantity, PDescription, OnOffer, OfferPrice)
+VALUES 
+(1, 'Laptop A', 1000, 'Laptop', 10, 'High-performance laptop', false, NULL),
+(2, 'Printer X', 200, 'Printer', 20, 'Color laser printer', true, 150),
+(3, 'Computer B', 800, 'Computer', 5, 'Budget desktop computer', false, NULL),
+(4, 'Laptop C', 1200, 'Laptop', 8, 'Slim and lightweight laptop', true, 1000),
+(5, 'Printer Y', 300, 'Printer', 15, 'High-resolution color printer', true, 250),
+(6, 'Computer C', 900, 'Computer', 12, 'Gaming desktop computer', false, NULL),
+(7, 'Laptop D', 1500, 'Laptop', 5, 'Powerful and sleek laptop', false, NULL),
+(8, 'Tablet X', 400, 'Tablet', 20, '10-inch Android tablet', true, 350);
+
+INSERT INTO Appears_In (ProductID, CartID, Quantity, PriceSold)
+VALUES 
+(1, 101, 2, 2000),
+(2, 102, 1, 150),
+(3, 103, 1, 800),
+(4, 104, 2, 2400),
+(5, 105, 2, 600),
+(6, 106, 1, 900),
+(7, 107, 3, 450),
+(8, 108, 2, 800);
+
+INSERT INTO Computer (ProductID, CPUType)
+VALUES 
+(3, 'AMD Ryzen 7'),
+(6, 'AMD Ryzen 7'),
+(7, 'Intel Core i9');
+
+INSERT INTO Laptop (ProductID, CPUType, Weight, BatteryType)
+VALUES 
+(1, 'Intel Core i7', 4, 'Li-Ion'),
+(4, 'Intel Core i5', 3, 'Li-Po'),
+(7, 'ARM Cortex', 2, 'Li-Ion');
+
+INSERT INTO Printer (ProductID, Resolution, PrinterType)
+VALUES 
+(2, '1200x1200', 'Laser'),
+(5, '2400x1200', 'Inkjet'),
+(8, '1440x1440', 'Laser');
