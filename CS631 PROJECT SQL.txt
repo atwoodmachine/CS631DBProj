@@ -7,14 +7,14 @@ CREATE TABLE Customer (
     Status varchar(255) NOT NULL,
     Email varchar(255) UNIQUE,
     Address varchar(255),
-    Phone int UNIQUE,
+    Phone bigint UNIQUE,
     CreditLine int,
     PRIMARY KEY (CID)
 );
 
 CREATE TABLE Credit_Card (
     CID int NOT NULL,
-    CardNumber int NOT NULL,
+    CardNumber bigint NOT NULL,
     SecNumber int NOT NULL,
     CardOwnerName varchar(255) NOT NULL,
     CardType varchar(255),
@@ -49,7 +49,7 @@ CREATE TABLE Ship_Address (
 CREATE TABLE Transaction (
     CID int NOT NULL,
     SAName varchar(255) NOT NULL,
-    CardNumber int NOT NULL,
+    CardNumber bigint NOT NULL,
     CartID int NOT NULL,
     TDATE DATE,
     TotalAmount int,
