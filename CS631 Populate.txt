@@ -1,13 +1,13 @@
-INSERT INTO Customer (CID, FName, LName, Status, Email, Address, Phone, CreditLine)
+INSERT INTO Customer (FName, LName, Status, Email, Address, Phone, CreditLine)
 VALUES 
-(1, 'John', 'Doe', 'Active', 'john.doe@email.com', '123 Main St, Cityville', 5551234567, 1000),
-(2, 'Jane', 'Smith', 'Active', 'jane.smith@email.com', '456 Oak St, Townsville', 5559876543, 1500),
-(3, 'Alice', 'Johnson', 'Active', 'alice.johnson@email.com', '789 Maple St, Villagetown', 5552345678, 1200),
-(4, 'Bob', 'Miller', 'Active', 'bob.miller@email.com', '101 Pine St, Hamletsville', 5553456789, 800),
-(5, 'Eva', 'Anderson', 'Active', 'eva.anderson@email.com', '555 Elm St, Suburbia', 5554567890, 2000),
-(6, 'Charlie', 'Clark', 'Active', 'charlie.clark@email.com', '789 Oak St, Countryside', 5555678901, 1500),
-(7, 'Grace', 'Davis', 'Active', 'grace.davis@email.com', '123 Cedar St, Outskirts', 5556789012, 1800),
-(8, 'David', 'Evans', 'Active', 'david.evans@email.com', '456 Birch St, Farmland', 5557890123, 1200);
+('John', 'Doe', 'Active', 'john.doe@email.com', '123 Main St, Cityville', 5551234567, 1000),
+('Jane', 'Smith', 'Active', 'jane.smith@email.com', '456 Oak St, Townsville', 5559876543, 1500),
+('Alice', 'Johnson', 'Active', 'alice.johnson@email.com', '789 Maple St, Villagetown', 5552345678, 1200),
+('Bob', 'Miller', 'Active', 'bob.miller@email.com', '101 Pine St, Hamletsville', 5553456789, 800),
+('Eva', 'Anderson', 'Active', 'eva.anderson@email.com', '555 Elm St, Suburbia', 5554567890, 2000),
+('Charlie', 'Clark', 'Active', 'charlie.clark@email.com', '789 Oak St, Countryside', 5555678901, 1500),
+('Grace', 'Davis', 'Active', 'grace.davis@email.com', '123 Cedar St, Outskirts', 5556789012, 1800),
+('David', 'Evans', 'Active', 'david.evans@email.com', '456 Birch St, Farmland', 5557890123, 1200);
 
 INSERT INTO Credit_Card (CID, CardNumber, SecNumber, CardOwnerName, CardType, BillingAddress, ExpDate, isStored)
 VALUES 
