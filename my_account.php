@@ -64,6 +64,42 @@
     </form>
 
     <h1>
+    Use this form to add a new shipping address to your account:
+    </h1>
+    <form method="post" action="add_ship.php" id="forms">
+        <label for="CID">Enter your CID (provided at the top of the page):</label>
+        <input id="CID" type="text" name="CID">
+        
+        <label for="shipname">Name of shipping address:</label>
+        <input id="Address name" type="text" name="shipname">
+              
+        <label for="recip">Recipient Name:</label>
+        <input id="Recipient Name" type="text" name="recip">
+
+        <label for="country">Country:</label>
+        <input id="country" type="text" name="country">
+        
+        <label for="state">State:</label>
+        <input id="state" type="text" name="state" placeholder = "ex: NY">
+
+        <label for="city">City:</label>
+        <input id="city" type="text" name="city">
+
+        <label for="zip">Zip code:</label>
+        <input id="zip" type="text" name="zip" placeholder = "ex: 12345">
+
+        <label for="street">Street Name:</label>
+        <input id="street" type="text" name="street">
+        
+        <label for="streetnum">Street number:</label>
+        <input id="streetnum" type="number" name="streetnum">
+
+        <input id="reset" type="reset" />
+        <input id="submit" type="submit" />
+    </form>
+
+
+    <h1>
     To delete a credit card, enter its card number below and submit:
     </h1>
     <form method="post" action="remove_cc.php" id="forms">
@@ -81,7 +117,7 @@
 
         <label for="SAName">Shipping Address Name:</label>
         <input id="SAName" type="text" name="SAName">
-        
+
         <input id="submit" type="submit" />
     </form>
 
