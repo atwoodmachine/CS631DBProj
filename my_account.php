@@ -26,15 +26,23 @@
 <html>
 
 <body>
+    Hello, <?php echo $me['FName'];?> <br>
+    Your Customer ID (CID) is: <?php echo $me['CID'];?>
     <h1>
     Use this form to add a new credit card:
     </h1>
     <form method="post" action="add_cc.php" id="forms">
+        <label for="CID">Enter your CID (provided at the top of the page):</label>
+        <input id="CID" type="text" name="CID">
+        
         <label for="ccnumber">Card number:</label>
         <input id="Card number" type="text" name="ccnumber">
               
         <label for="secnum">Security number:</label>
         <input id="Security number" type="text" name="secnum">
+
+        <label for="cname">Name on card:</label>
+        <input id="Owner name" type="text" name="cname">
                 
         <label for="type">Card type:</label>
         <select name="type" id="Card Type">

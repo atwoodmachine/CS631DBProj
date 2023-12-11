@@ -1,11 +1,11 @@
 <?php 
-    include('my_account.php');
+    $cid = filter_input(INPUT_POST, "CID");
     $cardNum = filter_input(INPUT_POST, "ccnumber");
     $sec = filter_input(INPUT_POST, "secnum");
+    $owner = filter_input(INPUT_POST, "cname");
     $ctype = filter_input(INPUT_POST, "type");
     $billing = filter_input(INPUT_POST, "address");
     $expiry = filter_input(INPUT_POST, "expiration");
-
 
     $error_message = 'Error in field(s):<br>';
 
@@ -33,7 +33,6 @@
     }
     else{
         require_once('database.php');
-
         $query = 'INSERT INTO Credit_Card
         (CID, CardNumber, SecNumber, CardOwnerName, CardType, BillingAddress, ExpDate) 
         VALUES (:CID, :CardNumber, :SecNumber, :CardOwnerName, :CardType, 
@@ -41,16 +40,31 @@
         
         $statement = $db->prepare($query);
 
-        $statement->bindValue(':CID', $);
-        $statement->bindValue(':CardNumber', $);
-        $statement->bindValue(':SecNumber', $);
-        $statement->bindValue(':CardOwnerName', $);
-        $statement->bindValue(':CardType', $);
-        $statement->bindValue(':BillingAddress', $);
-        $statement->bindValue(':ExpDate', $);
+        $statement->bindValue(':CID', $cid);
+        $statement->bindValue(':CardNumber', $cardNum);
+        $statement->bindValue(':SecNumber', $sec);
+        $statement->bindValue(':CardOwnerName', $owner);
+        $statement->bindValue(':CardType', $ctype);
+        $statement->bindValue(':BillingAddress', $billing);
+        $statement->bindValue(':ExpDate', $expiry);
 
         $statement->execute();
         $statement->closeCursor();
     }
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta lang="en" />
+  </head>
+
+    <section id="center">
+        <h2>Success!</h2>
+        <p>Congratulations, you have successfully added a credit card to your account!</p>
+    </section>
+   
+  </body>
+</html>
