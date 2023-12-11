@@ -1,5 +1,7 @@
 <?php 
-    $cardNum = filter_input(INPUT_POST, "cardNum");
+    $custID = filter_input(INPUT_POST, "custID");
+    $ship = filter_input(INPUT_POST, "SAName");
+    
     $error_message = 'Error in field(s):<br>';
 
     if($cardNum === FALSE){
@@ -14,13 +16,12 @@
     }
     else{
         require_once('database.php');
-        $query = 'DELETE FROM Credit_Card
-        WHERE CardNumber = :cnum';
+        $query = 'DELETE FROM Ship_Address
+        WHERE CID = :cid AND SAName = :saname';
         
         $statement = $db->prepare($query);
-
-        $statement->bindValue(':cnum', $cardNum);
-
+        $statement->bindValue(':cid', $custID);
+        $statement->bindValue(':saname', $ship);
         $statement->execute();
         $statement->closeCursor();
     }
@@ -36,7 +37,7 @@
 
     <section id="center">
         <h2>Success!</h2>
-        <p>You have successfully removed a credit card from your account.</p>
+        <p>You have successfully removed a shipping address from your account.</p>
     </section>
    
   </body>

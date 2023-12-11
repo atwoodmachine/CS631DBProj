@@ -29,7 +29,7 @@
     Hello, <?php echo $me['FName'];?> <br>
     Your Customer ID (CID) is: <?php echo $me['CID'];?>
     <h1>
-    Use this form to add a new credit card:
+    Use this form to add a new credit card to your account:
     </h1>
     <form method="post" action="add_cc.php" id="forms">
         <label for="CID">Enter your CID (provided at the top of the page):</label>
@@ -72,7 +72,19 @@
         <input id="submit" type="submit" />
     </form>
 
-    
+    <h1>
+    To delete a shipping address, enter its name and your CID below and submit:
+    </h1>
+    <form method="post" action="remove_ship.php" id="forms">
+        <label for="custID">Enter your CID (provided at the top of the page):</label>
+        <input id="custID" type="text" name="custID">
+
+        <label for="SAName">Shipping Address Name:</label>
+        <input id="SAName" type="text" name="SAName">
+        
+        <input id="submit" type="submit" />
+    </form>
+
 </body>
 
 </html>
