@@ -63,6 +63,16 @@
         <input id="submit" type="submit" />
     </form>
 
+    <h1>
+    To delete a credit card, enter its card number below and submit:
+    </h1>
+    <form method="post" action="remove_cc.php" id="forms">
+        <label for="cardNum">Card number:</label>
+        <input id="Card number" type="text" name="cardNum">
+        <input id="submit" type="submit" />
+    </form>
+
+    
 </body>
 
 </html>
