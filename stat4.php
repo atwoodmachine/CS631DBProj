@@ -3,7 +3,7 @@
     $start = filter_input(INPUT_POST, "startDate");
     $end = filter_input(INPUT_POST, "endDate");
 
-    #Stats 3
+    #Stats 4
     $saleStat4 = 'SELECT PName, COUNT(DISTINCT CID) as users
     FROM transaction LEFT JOIN appears_in on transaction.CartID = appears_in.CartID
     LEFT JOIN product ON appears_in.ProductID = product.ProductID
@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-    <table class="stat3Table">
+    <table class="stat4Table">
                 <tr>
                     <th>
                         Product
