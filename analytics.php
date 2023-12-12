@@ -113,7 +113,7 @@
     
     <!-- Stats 6: requires user input -->
     <h1>
-    Stat 6: Compute the maximum basket total amount for each credit card for a given time period:
+    Stat 6: Compute the average selling product price for each product type for a given time period:
     </h1>
     <form method="post" action="stat6.php" id="forms">
         <label for="startDate">Start date (YYYY-MM-DD):</label>
