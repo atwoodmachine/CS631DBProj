@@ -73,6 +73,46 @@
     </table>
 
     <h1>Your shipping addresses:</h1>
+    <table class="customerAddressTable">
+                <tr>
+                    <th>
+                        Address Name
+                    </th>
+                    <th>
+                        Recipient Name
+                    </th>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        Zip Code
+                    </th>
+                    <th>
+                        Street Number
+                    </th>
+                    <th>
+                        Street Name
+                    </th>
+                </tr>
+            <?php foreach ($addresses as $address): ?>
+                <tr>
+                    <td><?php echo $address['SAName'];?></td>
+                    <td><?php echo $address['RecipientName'];?></td> 
+                    <td><?php echo $address['Country'];?></td>
+                    <td><?php echo $address['State'];?></td>
+                    <td><?php echo $address['City'];?></td>
+                    <td><?php echo $address['Zip'];?></td>
+                    <td><?php echo $address['SNumber'];?></td>
+                    <td><?php echo $address['Street'];?></td>
+                </tr>
+            <?php endforeach ?>
+    </table>
 
     <h1>
     Use this form to add a new credit card to your account:
