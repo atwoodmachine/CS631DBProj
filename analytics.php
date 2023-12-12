@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html>
     <!--Stats 1: Credit cards and amount charged per card-->
-    <h1>Total Amount Charged Per Credit Card</h2>
+    <h1>Stat 1: Total Amount Charged Per Credit Card</h2>
     <table class="creditCardTable">
                 <tr>
                     <th>
@@ -43,7 +43,7 @@
     </table>
 
     <!--Stats 2: Top ten customers-->
-    <h2>Top 10 Best Customers</h2>
+    <h2>Stat 2: Top 10 Best Customers</h2>
     <table class="topTenTable">
                 <tr>
                     <th>
@@ -71,9 +71,51 @@
 
     <!-- Stats 3: requires user input -->
     <h1>
-    Compute the top 5 most frequently sold products for a given time period:
+    Stat 3: Compute the top 5 most frequently sold products for a given time period:
     </h1>
     <form method="post" action="stat3.php" id="forms">
+        <label for="startDate">Start date (YYYY-MM-DD):</label>
+        <input id="Start Date" type="text" name="startDate" placeholder = "ex:2023-12-01">
+
+        <label for="endDate">End date (YYYY-MM-DD):</label>
+        <input id="End Date" type="text" name="endDate" placeholder = "ex:2023-12-31">
+
+        <input id="submit" type="submit" />
+    </form>
+
+    <!-- Stats 4: requires user input -->
+    <h1>
+    Stat 4: Compute the top 5 products sold to the highest number of distinct customers in a given time period:
+    </h1>
+    <form method="post" action="stat4.php" id="forms">
+        <label for="startDate">Start date (YYYY-MM-DD):</label>
+        <input id="Start Date" type="text" name="startDate" placeholder = "ex:2023-12-01">
+
+        <label for="endDate">End date (YYYY-MM-DD):</label>
+        <input id="End Date" type="text" name="endDate" placeholder = "ex:2023-12-31">
+
+        <input id="submit" type="submit" />
+    </form>
+
+    <!-- Stats 5: requires user input -->
+    <h1>
+    Stat 5: Compute the maximum basket total amount for each credit card for a given time period:
+    </h1>
+    <form method="post" action="stat5.php" id="forms">
+        <label for="startDate">Start date (YYYY-MM-DD):</label>
+        <input id="Start Date" type="text" name="startDate" placeholder = "ex:2023-12-01">
+
+        <label for="endDate">End date (YYYY-MM-DD):</label>
+        <input id="End Date" type="text" name="endDate" placeholder = "ex:2023-12-31">
+
+        <input id="submit" type="submit" />
+    </form>
+    
+    <!-- Stats 6: requires user input -->
+    <h1>
+    Stat 6: Compute the maximum basket total amount for each credit card for a given time period:
+    </h1>
+    <form method="post" action="stat6.php" id="forms">
         <label for="startDate">Start date (YYYY-MM-DD):</label>
         <input id="Start Date" type="text" name="startDate" placeholder = "ex:2023-12-01">
 
