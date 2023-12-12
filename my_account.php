@@ -12,13 +12,27 @@
     }
     else{
         require_once('database.php');
-
         $query = 'SELECT * FROM Customer WHERE Email = :mail';
         $statement = $db->prepare($query);
         $statement->bindValue(':mail', $email);
         $statement->execute();
         $me = $statement->fetch(PDO::FETCH_ASSOC);
         $statement->closeCursor();
+        
+        $customerID = $me['CID'];
+        $cardsQuery = 'SELECT * FROM Credit_Card WHERE CID = :custID';
+        $statement2 = $db->prepare($cardsQuery);
+        $statement2->bindValue(':custID', $customerID);
+        $statement2->execute();
+        $cards = $statement2->fetchAll();
+        $statement2->closeCursor();
+
+        $addressQuery = 'SELECT * FROM Ship_Address WHERE CID = :customerID';
+        $statement3 = $db->prepare($addressQuery);
+        $statement3->bindValue(':customerID', $customerID);
+        $statement3->execute();
+        $addresses = $statement3->fetchAll();
+        $statement3->closeCursor();
     }
 ?>
 
@@ -28,6 +42,38 @@
 <body>
     Hello, <?php echo $me['FName'];?> <br>
     Your Customer ID (CID) is: <?php echo $me['CID'];?>
+    <h1>Your credit cards:</h1>
+    <table class="customerCardTable">
+                <tr>
+                    <th>
+                        Card Number
+                    </th>
+                    <th>
+                        Name on card
+                    </th>
+                    <th>
+                        Card Type
+                    </th>
+                    <th>
+                        Billing Address
+                    </th>
+                    <th>
+                        Expiration Date
+                    </th>
+                </tr>
+            <?php foreach ($cards as $card): ?>
+                <tr>
+                    <td><?php echo $card['CardNumber'];?></td>
+                    <td><?php echo $card['CardOwnerName'];?></td> 
+                    <td><?php echo $card['CardType'];?></td>
+                    <td><?php echo $card['BillingAddress'];?></td>
+                    <td><?php echo $card['ExpDate'];?></td>
+                </tr>
+            <?php endforeach ?>
+    </table>
+
+    <h1>Your shipping addresses:</h1>
+
     <h1>
     Use this form to add a new credit card to your account:
     </h1>
