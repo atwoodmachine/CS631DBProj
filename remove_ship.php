@@ -34,7 +34,13 @@
     <meta charset="utf-8" />
     <meta lang="en" />
   </head>
-
+  <div class = "nav">
+        <a href="registration.php">Register</a>
+        <a href="login.php">My account</a>
+        <a href="view_cart.php">My basket</a>
+        <a href="browse.php">Browse</a>
+        <a href="analytics.php">Analytics</a>
+    </div>
     <section id="center">
         <h2>Success!</h2>
         <p>You have successfully removed a shipping address from your account.</p>

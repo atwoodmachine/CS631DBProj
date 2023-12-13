@@ -23,6 +23,13 @@
 
 <!DOCTYPE html>
 <html>
+<div class = "nav">
+        <a href="registration.php">Register</a>
+        <a href="login.php">My account</a>
+        <a href="view_cart.php">My basket</a>
+        <a href="browse.php">Browse</a>
+        <a href="analytics.php">Analytics</a>
+    </div>
     <!--Stats 1: Credit cards and amount charged per card-->
     <h2>Stat 1: Total Amount Charged Per Credit Card</h2>
     <table class="creditCardTable">

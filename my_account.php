@@ -48,6 +48,13 @@
 <html>
 
 <body>
+<div class = "nav">
+        <a href="registration.php">Register</a>
+        <a href="login.php">My account</a>
+        <a href="view_cart.php">My basket</a>
+        <a href="browse.php">Browse</a>
+        <a href="analytics.php">Analytics</a>
+    </div>
     Hello, <?php echo $me['FName'];?> <br>
     Your Customer ID (CID) is: <?php echo $me['CID'];?>
     <h1>Your credit cards:</h1>
