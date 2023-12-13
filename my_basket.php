@@ -46,6 +46,11 @@
         $statement3->execute();
         $addresses = $statement3->fetchAll();
         $statement3->closeCursor();
+
+        $basketTotal = 0;
+        foreach($items as $item) {
+            $basketTotal += $item['PriceSold'] * $item['Quantity'];
+        }
     }
 ?>
 
@@ -73,7 +78,7 @@
                 </tr>
             <?php endforeach ?>
     </table>
-
+    Total: <?php echo $basketTotal;?>
     <h2>Fill out the following form to complete your transaction:</h2>
     <form method="post" action="transaction.php" id="forms">
         
