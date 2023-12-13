@@ -53,7 +53,7 @@ CREATE TABLE Transaction (
     CartID int NOT NULL,
     TDATE DATE,
     TotalAmount int,
-    TranTag bool,
+    TranTag bool DEFAULT '0',
     PRIMARY KEY (CartID),
     FOREIGN KEY (CartID) REFERENCES Basket(CartID),
     FOREIGN KEY (CID,SANAME) REFERENCES Ship_Address(CID,SAName)
