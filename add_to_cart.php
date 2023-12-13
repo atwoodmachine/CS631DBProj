@@ -40,8 +40,8 @@
     $stat->closeCursor();
 
     #if there is no basket, create one
-    if($cart['CartID'] === NULL){
-        $newCart = 'INSERT INTO basket (CartID) VALUES (:cid)';
+    if($stat->rowCount() == 0){
+        $newCart = 'INSERT INTO basket (CID) VALUES (:cid)';
         $stat2 = $db->prepare($newCart);
         $stat2->bindValue(':cid', $customer);
         $stat2->execute();
