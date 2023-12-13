@@ -69,7 +69,13 @@
     $insQuery->closeCursor();
 
     #update product to reduce in stock quantity
-    
+    $stockUpdate = 'UPDATE product SET PQuantity = PQuantity - :change 
+    WHERE ProductID = :product';
+    $update = $db->prepare($stockUpdate);
+    $update->bindValue(':change', $quantity);
+    $update->bindValue(':product', $add);
+    $update->execute();
+    $update->closeCursor();
 ?>
 
 <!DOCTYPE html>
