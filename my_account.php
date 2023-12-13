@@ -33,6 +33,14 @@
         $statement3->execute();
         $addresses = $statement3->fetchAll();
         $statement3->closeCursor();
+
+        #basic transaction info
+        $transQuery = 'SELECT * FROM transaction WHERE CID = :cust';
+        $statement4 = $db->prepare($transQuery);
+        $statement4->bindValue(':cust', $customerID);
+        $statement4->execute();
+        $orders = $statement4->fetchAll();
+        $statement4->closeCursor();
     }
 ?>
 
@@ -206,6 +214,38 @@
 
         <input id="submit" type="submit" />
     </form>
+
+    <h1>Your orders:</h1>
+    <table class="customerCardTable">
+                <tr>
+                    <th>
+                        Order number
+                    </th>
+                    <th>
+                        Total Cost
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Delivered
+                    </th>
+                </tr>
+            <?php foreach ($orders as $order): ?>
+                <tr>
+                    <td><?php echo $order['CartID'];?></td>
+                    <td><?php echo $order['TotalAmount'];?></td> 
+                    <td><?php echo $order['TDATE'];?></td>
+                    <td><?php 
+                    if($order['TranTag']){
+                        echo 'Yes';
+                    }
+                    else{
+                        echo 'No';
+                    }?></td>
+                </tr>
+            <?php endforeach ?>
+    </table>
 
 </body>
 
