@@ -264,7 +264,7 @@
     </form>
 
     <h1>Your orders:</h1>
-    <table class="customerCardTable">
+    <table class="orderTable">
                 <tr>
                     <th>
                         Order number
@@ -294,6 +294,22 @@
                 </tr>
             <?php endforeach ?>
     </table>
+
+    <h2>Query orders based on certain criteria:</h2>
+    <h3>Order date range:</h3>
+    <form method="post" action="filter_orders1.php" id="forms">
+        <label for="custID">Enter your CID (provided at the top of the page):</label>
+        <input id="custID" type="text" name="custID">
+        
+        <label for="startDate">Start date (YYYY-MM-DD):</label>
+        <input id="Start Date" type="text" name="startDate" placeholder = "ex:2023-12-01">
+
+        <label for="endDate">End date (YYYY-MM-DD):</label>
+        <input id="End Date" type="text" name="endDate" placeholder = "ex:2023-12-31">
+
+        <input id="submit" type="submit" />
+    </form>
+    <h3></h3>
 </body>
 
 </html>
