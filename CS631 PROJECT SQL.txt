@@ -27,7 +27,7 @@ CREATE TABLE Credit_Card (
 
 CREATE TABLE Basket (
     CID int NOT NULL,
-    CartID int NOT NULL,
+    CartID int NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (CartID),
     FOREIGN KEY (CID) REFERENCES Customer(CID)
 );
