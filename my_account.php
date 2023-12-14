@@ -300,7 +300,7 @@
     <form method="post" action="filter_orders1.php" id="forms">
         <label for="custID">Enter your CID (provided at the top of the page):</label>
         <input id="custID" type="text" name="custID">
-        
+
         <label for="startDate">Start date (YYYY-MM-DD):</label>
         <input id="Start Date" type="text" name="startDate" placeholder = "ex:2023-12-01">
 
@@ -309,7 +309,16 @@
 
         <input id="submit" type="submit" />
     </form>
-    <h3></h3>
+    <h3>Product in transaction:</h3>
+    <form method="post" action="filter_orders2.php" id="forms">
+        <label for="custID">Enter your CID (provided at the top of the page):</label>
+        <input id="custID" type="text" name="custID">
+
+        <label for="prodName">Enter the name of the product:</label>
+        <input id="pName" type="text" name="pName">
+
+        <input id="submit" type="submit" />
+    </form>
 </body>
 
 </html>
