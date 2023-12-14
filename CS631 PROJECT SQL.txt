@@ -21,15 +21,13 @@ CREATE TABLE Credit_Card (
     BillingAddress varchar(255),
     ExpDate varchar(255) NOT NULL,
     isStored BOOL DEFAULT '1',
-    PRIMARY Key (CardNumber),
-    FOREIGN KEY (CID) REFERENCES Customer(CID)
+    PRIMARY Key (CardNumber)
 );
 
 CREATE TABLE Basket (
     CID int NOT NULL,
     CartID int NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (CartID),
-    FOREIGN KEY (CID) REFERENCES Customer(CID)
+    PRIMARY KEY (CartID)
 );
 
 CREATE TABLE Ship_Address (
@@ -42,8 +40,7 @@ CREATE TABLE Ship_Address (
     Zip int NOT NULL,
     Street varchar(255) NOT NULL,
     SNumber int,
-    PRIMARY KEY (CID,SAName),
-    FOREIGN KEY (CID) REFERENCES Customer(CID)
+    PRIMARY KEY (CID,SAName)
 );
 
 CREATE TABLE Transaction (
@@ -54,9 +51,7 @@ CREATE TABLE Transaction (
     TDATE DATE,
     TotalAmount int,
     TranTag bool DEFAULT '0',
-    PRIMARY KEY (CartID),
-    FOREIGN KEY (CartID) REFERENCES Basket(CartID),
-    FOREIGN KEY (CID,SANAME) REFERENCES Ship_Address(CID,SAName)
+    PRIMARY KEY (CartID)
 );
 
 
@@ -77,16 +72,13 @@ CREATE TABLE Appears_In (
     CartID int NOT NULL,
     Quantity int,
     PriceSold int,
-    PRIMARY KEY (CartID,ProductID),
-    FOREIGN KEY (CartID) REFERENCES Basket(CartID),
-    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    PRIMARY KEY (CartID,ProductID)
 );
 
 CREATE TABLE Computer (
     ProductID int NOT NULL,
     CPUType varchar(255) NOT NULL,
-    PRIMARY KEY (ProductID),
-    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    PRIMARY KEY (ProductID)
 );
 
 CREATE TABLE Laptop (
@@ -94,14 +86,12 @@ CREATE TABLE Laptop (
     CPUType varchar(255) NOT NULL,
     Weight int NOT NULL,
     BatteryType varchar(255) NOT NULL,
-    PRIMARY KEY (ProductID),
-    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    PRIMARY KEY (ProductID)
 );
 
 CREATE TABLE Printer (
     ProductID int NOT NULL,
     Resolution varchar(255) NOT NULL,
     PrinterType varchar(255) NOT NULL,
-    PRIMARY KEY (ProductID),
-    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    PRIMARY KEY (ProductID)
 );
