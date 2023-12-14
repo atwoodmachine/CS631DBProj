@@ -56,7 +56,20 @@
         <a href="analytics.php">Analytics</a>
     </div>
     Hello, <?php echo $me['FName'];?> <br>
-    Your Customer ID (CID) is: <?php echo $me['CID'];?>
+    Your Customer ID (CID) is: <?php echo $me['CID'];?> <br>
+    Your available credit is: $<?php echo $me['CreditLine'];?><br>
+    Your email: <?php echo $me['Email'];?><br>
+    Your phone number: <?php echo $me['Phone'];?><br>
+    <h3>Use the fields below to update account details:</h3>
+    <form method="post" action="acc_update.php" id="forms">
+        <label for="oldEmail">Enter your original email (required for all updates):</label>
+            <input id="Email" type="text" name="oldEmail">
+        <label for="newEmail">Enter new email:</label>
+            <input id="Email" type="text" name="newEmail">
+        <label for="newPhone">Enter new phone number:</label>
+            <input id="newPhone" type="text" name="newPhone">
+            <input id="submit" type="submit"/>   
+    </form>
     <h1>Your credit cards:</h1>
     <table class="customerCardTable">
                 <tr>
@@ -253,7 +266,6 @@
                 </tr>
             <?php endforeach ?>
     </table>
-
 </body>
 
 </html>
