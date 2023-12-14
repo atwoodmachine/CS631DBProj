@@ -99,6 +99,20 @@
                 </tr>
             <?php endforeach ?>
     </table>
+    
+    <h3>Use the fields below to update a card's billing address:</h3>
+    <form method="post" action="update_cc.php" id="forms">
+        <label for="CID">Enter your CID (provided at the top of the page):</label>
+        <input id="CID" type="text" name="CID">
+        
+        <label for="ccnumber">Card number for card to be updated:</label>
+        <input id="Card number" type="text" name="ccnumber">
+              
+        <label for="address">New Billing Address:</label>
+        <input id="Address" type="text" name="address">
+
+        <input id="submit" type="submit" />
+    </form>
 
     <h1>Your shipping addresses:</h1>
     <table class="customerAddressTable">
@@ -141,6 +155,20 @@
                 </tr>
             <?php endforeach ?>
     </table>
+
+    <h3>Use the fields below to update a shipping address:</h3>
+    <form method="post" action="update_ship.php" id="forms">
+        <label for="CID">Enter your CID (provided at the top of the page):</label>
+        <input id="CID" type="text" name="CID">
+        
+        <label for="ccnumber">Address name for address to be updated:</label>
+        <input id="Card number" type="text" name="ccnumber">
+
+        <label for="address">New Street Name:</label>
+        <input id="Address" type="text" name="address">
+
+        <input id="submit" type="submit" />
+    </form>
 
     <h1>
     Use this form to add a new credit card to your account:
