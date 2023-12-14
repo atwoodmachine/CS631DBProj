@@ -161,11 +161,11 @@
         <label for="CID">Enter your CID (provided at the top of the page):</label>
         <input id="CID" type="text" name="CID">
         
-        <label for="ccnumber">Address name for address to be updated:</label>
-        <input id="Card number" type="text" name="ccnumber">
+        <label for="saname">Address name for address to be updated:</label>
+        <input id="saname" type="text" name="saname">
 
-        <label for="address">New Street Name:</label>
-        <input id="Address" type="text" name="address">
+        <label for="newname">New Street Name:</label>
+        <input id="newname" type="text" name="newname">
 
         <input id="submit" type="submit" />
     </form>
